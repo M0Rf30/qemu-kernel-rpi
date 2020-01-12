@@ -3,6 +3,7 @@
 # Build ARM kernel for QEMU Raspberry Pi 1 Emulation
 #
 #######################################################
+MODEL=rpi1
 REMOTE=https://github.com/raspberrypi/linux
 TOOLCHAIN=arm-none-eabi
 COMMIT=$(git remote show "$REMOTE" | grep "HEAD" | cut -f 2 -d : | tr -d '[:space:]')
@@ -22,7 +23,7 @@ fi
 cd linux-$COMMIT
 
 KERNEL_VERSION=$(make kernelversion)
-KERNEL_TARGET_FILE_NAME=qemu-kernel-$KERNEL_VERSION
+KERNEL_TARGET_FILE_NAME=qemu-kernel-$MODEL-$KERNEL_VERSION
 echo "Building Qemu Raspberry Pi kernel qemu-kernel-$KERNEL_VERSION"
 
 # Config
