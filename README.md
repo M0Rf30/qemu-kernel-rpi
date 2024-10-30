@@ -4,7 +4,7 @@ QEMU kernel builds for Raspberry Pi devices and a very awful script to compile t
 # Requirements
 Please install the required toolchain for arm:
 * arm-none-eabi (for arm)
-  
+
 Remember to install these packages:
 * ccache (to speedup frequent builds)
 

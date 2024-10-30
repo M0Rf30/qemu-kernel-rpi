@@ -32,7 +32,7 @@ jobs:
       - name: Build
         run: |
           docker run -u root -v $(pwd)/.ccache:/ccache -v $(pwd):/workspace m0rf30/arch-arm-crosscompile:latest \
-            bash -c "cd /workspace/; CCACHE_DIR=/ccache ./build.sh"
+            bash -c "cd /workspace; CCACHE_DIR=/ccache ./build.sh"
           echo "KERNEL_VER=$(ls qemu_kernel* | cut -d"-" -f 2)" >> $GITHUB_ENV
 
       - name: Archive production artifacts
